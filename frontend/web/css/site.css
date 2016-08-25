@@ -12,6 +12,7 @@ body {
 
 .wrap > .container {
     padding: 70px 15px 20px;
+    width: 100%;
 }
 
 .footer {
@@ -109,3 +110,4 @@ a.desc:after {
 .nav > li > form > button:hover {
     text-decoration: none;
 }
+
