@@ -25,7 +25,7 @@ h6 {
 
 h1{
   font-size: 36px;
-  color:#fff;
+  color:#1a1a1a;
 }
 
 h2{
@@ -265,9 +265,10 @@ input.search-form:hover {
 .navbar {
   border-radius: 0;
   margin-bottom: 0;
-  background: #151515;
+  background: #05038c;
   padding: 15px 0;
   padding-bottom: 0;
+  border-bottom:4px inset!important;
 }
 
  .navbar-nav{
@@ -373,7 +374,7 @@ input.search-form:hover {
 }
 
 #main-slider .carousel .carousel-content {
-  margin-top: 150px;
+  margin-top: 0px;
 }
 
 #main-slider .carousel .slide-margin{
@@ -381,13 +382,13 @@ input.search-form:hover {
 }
 
 #main-slider .carousel h2 {
-  color: #fff;
+  color: #1a1a1a;
 }
 
 #main-slider .carousel .btn-slide {
   padding: 8px 20px;
   background: #c52d2f;
-  color: #fff;
+  color: #1a1a1a;
   border-radius: 4px;
   margin-top: 25px;
   display: inline-block;
@@ -2523,6 +2524,10 @@ shortcodes page css
 #footer ul > li {
   display: inline-block;
   margin-left: 15px;
+}
+.form_object{
+    border: 3px solid #fff;
+    background: #8c8c8c;
 }
 
 

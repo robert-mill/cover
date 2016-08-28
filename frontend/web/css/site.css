@@ -110,4 +110,15 @@ a.desc:after {
 .nav > li > form > button:hover {
     text-decoration: none;
 }
+.page-nav-link{
+    border: aqua 2px outset;
+    background:#fff;
+    min-height: 45px;
+    text-align: center;
 
+}
+.form_object{
+    border: 3px solid #fff!important;
+    background: #8c8c8c!important;
+    color: #fff;
+}

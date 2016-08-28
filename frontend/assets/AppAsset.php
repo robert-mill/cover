@@ -27,7 +27,6 @@ class AppAsset extends AssetBundle
         'assets/js/bootstrap.min.js',
         'assets/js/html5shiv.js',
         'assets/js/jquery.isotope.min.js',
-        'assets/js/jquery.js',
         'assets/js/jquery.prettyPhoto.js',
         'assets/js/main.js',
         'assets/js/respond.min.js',
