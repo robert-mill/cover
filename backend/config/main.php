@@ -34,6 +34,11 @@ return [
                 ],
             ],
         ],
+        'mailer' => [
+            'class' => 'yii\rbac\DbManager',
+            'userFileTransport' => false,
+        ],
+
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
