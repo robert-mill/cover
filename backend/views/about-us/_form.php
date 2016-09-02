@@ -18,6 +18,8 @@ use yii\widgets\ActiveForm;
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <a href="?r=about-us-images%2Fcreate&id=<?=$model->aboutus_id?>"><?= Html::button( 'Add Image', ['class' =>  'btn btn-sucess']) ?></a>
+
     </div>
 
     <?php ActiveForm::end(); ?>

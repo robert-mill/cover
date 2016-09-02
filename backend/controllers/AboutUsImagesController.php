@@ -8,6 +8,7 @@ use backend\models\AboutUsImagesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * AboutUsImagesController implements the CRUD actions for AboutUsImages model.
@@ -66,6 +67,14 @@ class AboutUsImagesController extends Controller
         $model = new AboutUsImages();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $model->file = UploadedFile::getInstance($model, 'file');
+
+           // echo @frontend . '/web/images/added_imgs/'.$model->file->name;
+
+            $model->file->saveAs(Yii::getAlias('@frontend').'/web/images/addedimgs/'.$model->file->name);
+            $model->aboutus_imagename = Yii::getAlias('@frontend').'/web/images/addedimgs/'.$model->file->name;
+            $model->save();
+
             return $this->redirect(['view', 'id' => $model->aboutus_image_id]);
         } else {
             return $this->render('create', [

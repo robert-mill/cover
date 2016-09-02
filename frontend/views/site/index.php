@@ -1,4 +1,6 @@
 <?php
+use yii\helpers\BaseStringHelper;
+use yii\helpers\Inflection;
 
 /* @var $this yii\web\View */
 $i=1;
@@ -24,8 +26,10 @@ $homeText = $homeData::findAll(['home_id' => 1]);
                             <div class="carousel-content">
                                 <?php $homeText = $homeData::findAll(['home_id' => 1]);?>
                                 <h1 class="animation animated-item-1" ><?=$homeText[0]->home_title ?></h1>
-                                <h2 class="animation animated-item-2"><?=nl2br($homeText[0]->home_body)?></h2>
-                                <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                                <h2 class="animation animated-item-2">
+                                    <?= BaseStringHelper::truncateWords(nl2br( $homeText[0]->home_body), 75, $suffix = '...') ?>
+                                </h2>
+                                <a class="btn-slide animation animated-item-3" href="?r=about-us">Read More</a>
                             </div>
                         </div>
 

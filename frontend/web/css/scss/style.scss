@@ -1,0 +1,60 @@
+@import "colours";
+@import "minins";
+
+
+$default_rounded_amount: 50px;
+$list-style: none;
+.wrap {
+	min-height: 100%;
+	height: auto;
+	margin: 0 auto -60px;
+	padding: 0 0 60px;
+}
+
+.wrap > .container {
+	padding: 70px 15px 20px;
+	width: 100%;
+}
+.nav > li > form > button:hover {
+	text-decoration: none;
+}
+.page-nav-link{
+	border: aqua 2px outset;
+	background:$color-white;
+	min-height: 45px;
+	text-align: center;
+
+}
+.form_object{
+	border: 3px solid #fff!important;
+	background: #8c8c8c!important;
+	color: $color-white;
+}
+.job_zone_list{
+    ul{
+      list-style: $list-style;
+    }
+    li{
+        @include border-radius($default_rounded_amount);
+        border: 8px outset;
+        padding: 10px;
+        margin: 0 0 10px 0;
+        text-align: center;
+        background: #cafff7;
+      color:red;
+    }
+    li:hover{
+      @extend li;
+      border: 8px inset;
+      background: #cfffcc;
+
+    }
+    i{
+      display:inline-block;
+      font-size: 40px;
+      line-height: 50px;
+      text-align: center;
+      vertical-align: bottom;
+      width:100%;
+    }
+}

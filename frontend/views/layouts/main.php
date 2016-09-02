@@ -91,18 +91,18 @@ AppAsset::register($this);
                         ]
                     ]
                 ],
-                ['label' => 'About', 'url' => ['/site/about']],
+                ['label' => 'About', 'url' => ['/about-us']],
                 [
                     'label' => 'Jobs Zone',
-                    'url' => 'jobs.php',
+                    'url' => '?r=job-home',
                     'items' => [
                         [
                             'label' => 'Jobs Zone home',
-                            'url' => 'jobs.php#home',
+                            'url' => '?r=job-home',
                         ],
                         [
                             'label' => 'Quick Sign Up',
-                            'url' => 'teacher-post-reg',
+                            'url' => '?r=teacher-post-reg',
                         ],
                         [
                             'label' => 'Primary Education',
@@ -132,7 +132,7 @@ AppAsset::register($this);
                     'items' => [
                         [
                             'label' => 'Register vacancy',
-                            'url' => 'recruiting.php#home',
+                            'url' => '?r=school-post-reg',
                         ],
                         [
                             'label' => 'Security & Vetting',
@@ -154,11 +154,11 @@ AppAsset::register($this);
                         ],
                         [
                             'label' => 'Applicant Terms',
-                            'url' => '#aterms',
+                            'url' => '?r=teacher-conditions',
                         ],
                         [
                             'label' => 'Clients Terms',
-                            'url' => '#cterms',
+                            'url' => '?r=school-conditions',
                         ],
                         [
                             'label' => 'Time Sheets',

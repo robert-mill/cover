@@ -1,5 +1,6 @@
 <?php
 
+use app\components\EmailHandler;
 use dosamigos\datepicker\DatePicker;
 use frontend\models\AreaOfResidence;
 use frontend\models\Nationality;

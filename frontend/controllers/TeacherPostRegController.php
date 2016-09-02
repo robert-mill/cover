@@ -75,6 +75,12 @@ class TeacherPostRegController extends Controller
             $model->cv = 'uploaded_cv/'.$model->email.'_cv'.$model->file->extension;
 
             $model->save(false);
+            $to = $model->email;
+            $from = 'rob4962@gmail.com';
+            $subject = "Just Registered";
+            $body = "This is a test";
+            $attachment = '';
+            $this->sendEmail($to,$from,$subject,$body,$attachment,$model);
             return $this->redirect(['view', 'id' => $model->teacher_post_reg_id]);
         } else {
             return $this->render('create', [
@@ -129,5 +135,23 @@ class TeacherPostRegController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+
+    /**
+     * @param $to
+     * @param $from
+     * @param $subject
+     * @param $body
+     * @param $attachment
+     */
+    private static function sendEmail($to, $from, $subject, $body, $attachment,$model){
+        $value = Yii::$app->mailer->compose()
+            ->setFrom($from)
+            ->setTo($to)
+            ->setSubject($subject)
+            ->setHtmlBody($body)
+            ->send();
+        ;
+
     }
 }

@@ -21,7 +21,7 @@ class AppAsset extends AssetBundle
         'css/responsive.css',
 
 
-        'css/site.css',
+        'css/style.css',
     ];
     public $js = [
         'assets/js/bootstrap.min.js',

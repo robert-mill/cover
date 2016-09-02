@@ -14,6 +14,7 @@ use Yii;
  */
 class AboutUsImages extends \yii\db\ActiveRecord
 {
+    public $file;
     /**
      * @inheritdoc
      */
@@ -31,6 +32,7 @@ class AboutUsImages extends \yii\db\ActiveRecord
             [['aboutus_article_id_fk'], 'required'],
             [['aboutus_article_id_fk'], 'integer'],
             [['aboutus_imagename'], 'string', 'max' => 200],
+            [['file'],'file'],
             [['aboutus_imageposition'], 'string', 'max' => 50],
         ];
     }
@@ -45,6 +47,7 @@ class AboutUsImages extends \yii\db\ActiveRecord
             'aboutus_article_id_fk' => 'Aboutus Article Id Fk',
             'aboutus_imagename' => 'Aboutus Imagename',
             'aboutus_imageposition' => 'Aboutus Imageposition',
+            'file' => 'Image to upload',
         ];
     }
 }
