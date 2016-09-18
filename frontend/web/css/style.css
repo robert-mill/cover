@@ -1,3 +1,13 @@
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
+/* line 10, C:/xampp/htdocs/webRep4/cover/frontend/web/css/scss/style.scss */
 .wrap {
   min-height: 100%;
   height: auto;
@@ -5,50 +15,57 @@
   padding: 0 0 60px;
 }
 
+/* line 17, C:/xampp/htdocs/webRep4/cover/frontend/web/css/scss/style.scss */
 .wrap > .container {
   padding: 70px 15px 20px;
   width: 100%;
 }
 
+/* line 21, C:/xampp/htdocs/webRep4/cover/frontend/web/css/scss/style.scss */
 .nav > li > form > button:hover, .job_zone_list .nav > li:hover > form > button:hover {
   text-decoration: none;
 }
 
-.page-nav-link {
+/* line 24, C:/xampp/htdocs/webRep4/cover/frontend/web/css/scss/style.scss */
+.page-nav-link, .slider-img .page-nav-link {
   border: aqua 2px outset;
   background: #ffffff;
   min-height: 45px;
   text-align: center;
 }
 
+/* line 31, C:/xampp/htdocs/webRep4/cover/frontend/web/css/scss/style.scss */
 .form_object {
   border: 3px solid #fff !important;
   background: #8c8c8c !important;
   color: #ffffff;
 }
 
+/* line 37, C:/xampp/htdocs/webRep4/cover/frontend/web/css/scss/style.scss */
 .job_zone_list ul {
   list-style: none;
 }
 
+/* line 40, C:/xampp/htdocs/webRep4/cover/frontend/web/css/scss/style.scss */
 .job_zone_list li, .job_zone_list li:hover {
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -border-radius: 50px;
-  -ms-border-radius: 50px;
-  border: 8px outset;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -border-radius: 10px;
+  -ms-border-radius: 10px;
+  border: 2px outset;
   padding: 10px;
   margin: 0 0 10px 0;
   text-align: center;
   background: #cafff7;
-  color: red;
 }
 
+/* line 48, C:/xampp/htdocs/webRep4/cover/frontend/web/css/scss/style.scss */
 .job_zone_list li:hover {
-  border: 8px inset;
-  background: #cfffcc;
+  border: inset;
+  background: #cafff7;
 }
 
+/* line 54, C:/xampp/htdocs/webRep4/cover/frontend/web/css/scss/style.scss */
 .job_zone_list i {
   display: inline-block;
   font-size: 40px;
@@ -57,3 +74,76 @@
   vertical-align: bottom;
   width: 100%;
 }
+
+/* line 63, C:/xampp/htdocs/webRep4/cover/frontend/web/css/scss/style.scss */
+nav {
+  background-image: url(../images/banners/bannerbkGrnd.png) !important;
+  background-repeat: repeat-x;
+}
+
+/* line 68, C:/xampp/htdocs/webRep4/cover/frontend/web/css/scss/style.scss */
+nav .container {
+  width: 98%;
+  z-index: 0;
+  background-image: url(../images/banners/schools.png);
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  animation: animatedBackground 40s linear infinite;
+}
+
+/* line 78, C:/xampp/htdocs/webRep4/cover/frontend/web/css/scss/style.scss */
+.navbar-inverse {
+  background-color: #ffffff;
+}
+
+/* line 82, C:/xampp/htdocs/webRep4/cover/frontend/web/css/scss/style.scss */
+.row .page-nav-link {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -border-radius: 20px;
+  -ms-border-radius: 20px;
+  border: 2px outset;
+}
+
+/* line 87, C:/xampp/htdocs/webRep4/cover/frontend/web/css/scss/style.scss */
+.section_box {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -border-radius: 20px;
+  -ms-border-radius: 20px;
+  border: 2px outset;
+  background-image: url(../images/banners/bannerbkGrnd.png) !important;
+  background-repeat: repeat-x;
+  min-height: 225px;
+}
+
+/* line 95, C:/xampp/htdocs/webRep4/cover/frontend/web/css/scss/style.scss */
+.slider-img .page-nav-link {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -border-radius: 10px;
+  -ms-border-radius: 10px;
+  height: 130px;
+}
+
+/* line 100, C:/xampp/htdocs/webRep4/cover/frontend/web/css/scss/style.scss */
+.slider-img .page-nav-link:hover {
+  background-color: #cafff7;
+  border: inset;
+}
+
+/* line 104, C:/xampp/htdocs/webRep4/cover/frontend/web/css/scss/style.scss */
+.slider-img .iconframe {
+  width: 100%;
+  height: 50px;
+  display: block;
+}
+
+/* line 110, C:/xampp/htdocs/webRep4/cover/frontend/web/css/scss/style.scss */
+.footer {
+  background-color: #ffffff;
+  background-image: url(../images/banners/bannerbkGrnd.png) !important;
+  background-repeat: repeat-x;
+}
+
+/*# sourceMappingURL=../style.map */

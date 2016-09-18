@@ -1,8 +1,11 @@
 @import "colours";
 @import "minins";
 
-
-$default_rounded_amount: 50px;
+@keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
+$default_rounded_amount: 10px;
 $list-style: none;
 .wrap {
 	min-height: 100%;
@@ -36,17 +39,16 @@ $list-style: none;
     }
     li{
         @include border-radius($default_rounded_amount);
-        border: 8px outset;
+        border: 2px outset;
         padding: 10px;
         margin: 0 0 10px 0;
         text-align: center;
         background: #cafff7;
-      color:red;
     }
     li:hover{
       @extend li;
-      border: 8px inset;
-      background: #cfffcc;
+      border: inset;
+      background: $link-div-hover-background;
 
     }
     i{
@@ -57,4 +59,59 @@ $list-style: none;
       vertical-align: bottom;
       width:100%;
     }
+}
+nav{
+
+  background-image: url(../images/banners/bannerbkGrnd.png)!important;
+  background-repeat: repeat-x;
+
+  .container{
+      width: 98%;
+      z-index: 0;
+      background-image: url(../images/banners/schools.png);
+      background-position: 0px 0px;
+      background-repeat: repeat-x;
+      animation: animatedBackground 40s linear infinite;
+
+  }
+}
+.navbar-inverse{
+  background-color: $color-white;
+}
+.row{
+  .page-nav-link{
+    @include border-radius(20px);
+    border:2px outset;
+  }
+}
+.section_box{
+  @include border-radius(20px);
+  border: 2px outset;
+  background-image: url(../images/banners/bannerbkGrnd.png)!important;
+  background-repeat: repeat-x;
+  min-height: 225px;
+}
+.slider-img{
+  .page-nav-link{
+    @extend .page-nav-link;
+    @include border-radius($default_rounded_amount);
+    height: 130px;
+  }
+  .page-nav-link:hover{
+    background-color:$link-div-hover-background;
+    border: inset;
+  }
+  .iconframe{
+    width:100%;
+    height: 50px;
+    display: block;
+  }
+}
+.footer{
+  background-color: $color-white;
+  background-image: url(../images/banners/bannerbkGrnd.png)!important;
+  background-repeat: repeat-x;
+  .container{
+
+  }
 }

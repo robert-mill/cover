@@ -81,6 +81,7 @@ class TeacherPostRegController extends Controller
             $body = "This is a test";
             $attachment = '';
             $this->sendEmail($to,$from,$subject,$body,$attachment,$model);
+
             return $this->redirect(['view', 'id' => $model->teacher_post_reg_id]);
         } else {
             return $this->render('create', [
@@ -149,9 +150,10 @@ class TeacherPostRegController extends Controller
             ->setFrom($from)
             ->setTo($to)
             ->setSubject($subject)
-            ->setHtmlBody($body)
-            ->send();
+            ->send()
         ;
 
+
+        return true;
     }
 }

@@ -19,7 +19,7 @@ AppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
+    <title>Nikoz Recruitment</title>
     <?php $this->head() ?>
 </head>
 <body>
@@ -29,34 +29,9 @@ AppAsset::register($this);
     <?php
     NavBar::begin([
         'brandLabel' => '
-        <div class="logoWrap">
-         <img src="images/logo_banner.svg" class="img-responsive" width="40%">
-
-          <!-- <div class="cube">
-             <div class="front">
-                <p class="fullfont">Nikoz
-                <span class="halffont">Recruitment</span></p>
-             </div>
-             <div class="back">
-                <p class="fullfont">Nikoz
-                <span class="halffont">Recruitment</span></p>
-             </div>
-             <div class="top">
-            
-             </div>
-             <div class="bottom">
-             
-             </div>
-             <div class="left">
-             
-             </div>
-             <div class="right">
-             
-             </div>-->
-             
-            <!-- </div><!--The cube-->
-            
-            </div><!--LogoWrap-->
+        <div class="logoWrap" id="animate-area">
+            <img src="images/logo_banner.svg" class="img-responsive" width="40%">
+         </div><!--LogoWrap-->
         
         ',
         'brandUrl' => Yii::$app->homeUrl,
@@ -64,7 +39,125 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-    $menuItems = [
+    if( Yii::$app->user->can('schools-post-update') )
+    {
+        $menuItems = [
+
+
+            Nav::widget([
+                'options' => ['class' => 'navbar-nav navbar-right'],
+                'items' => [
+                    [
+                        'label' => 'Home',
+                        'url' => 'index.php',
+
+                        'items' => [
+                            [
+                                'label' => 'Home',
+                                'url' => 'index.php'
+                            ],
+                            [
+                                'label' => 'Services',
+                                'url' => '#services'
+                            ],
+                            '<li class="divider"></li>',
+                            '<li class="dropdown-header">School Admin</li>',
+                            [
+                                'label' => 'Log In',
+                                'url' => '?r=site/login'
+                            ]
+                        ]
+                    ],
+                    ['label' => 'About', 'url' => ['/about-us']],
+                    [
+                        'label' => 'Jobs Zone',
+                        'url' => '?r=job-home',
+                        'items' => [
+                            [
+                                'label' => 'Jobs Zone home',
+                                'url' => '?r=job-home',
+                            ],
+                            [
+                                'label' => 'Quick Sign Up',
+                                'url' => '?r=teacher-post-reg',
+                            ],
+                            [
+                                'label' => 'Primary Education',
+                                'url' => '#',
+                            ],
+                            [
+                                'label' => 'Secondary Education',
+                                'url' => '#',
+                            ],
+                            [
+                                'label' => 'Further Education',
+                                'url' => '#',
+                            ],
+
+                            [
+                                'label' => 'SEN',
+                                'url' => '#',
+                            ],
+                            [
+                                'label' => 'Job Alert',
+                                'url' => 'jobs.php#alert',
+                            ],
+                            [
+                                'label' => 'Add Post',
+                                'url' => '?r=schools-posts/create'
+                            ]
+                        ]
+                    ],
+                    [
+                        'label' => 'Recruiting',
+                        'url' => 'recruiting.php',
+                        'items' => [
+                            [
+                                'label' => 'Register vacancy',
+                                'url' => '?r=school-post-reg',
+                            ],
+                            [
+                                'label' => 'Security & Vetting',
+                                'url' => '#security',
+                            ],
+                            [
+                                'label' => 'Safety First',
+                                'url' => '#safety',
+                            ]
+                        ]
+                    ],
+                    [
+                        'label' => 'Resources',
+                        'url' => 'resources.php',
+                        'items' => [
+                            [
+                                'label' => 'Applicant Profiles',
+                                'url' => '#aprofiles',
+                            ],
+                            [
+                                'label' => 'Applicant Terms',
+                                'url' => '?r=teacher-conditions',
+                            ],
+                            [
+                                'label' => 'Clients Terms',
+                                'url' => '?r=school-conditions',
+                            ],
+                            [
+                                'label' => 'Time Sheets',
+                                'url' => '#tsheets',
+                            ]
+                        ]
+                    ],
+
+
+
+                    ['label' => 'Contact', 'url' => ['/site/contact']],
+                ],
+
+            ]),
+        ] ;
+    }else{
+        $menuItems = [
 
 
         Nav::widget([
@@ -84,10 +177,10 @@ AppAsset::register($this);
                             'url' => '#services'
                         ],
                         '<li class="divider"></li>',
-                        '<li class="dropdown-header">Dropdown Header</li>',
+                        '<li class="dropdown-header">School Admin</li>',
                         [
-                            'label' => 'Level 1 - Dropdown B',
-                            'url' => '#'
+                            'label' => 'Log In',
+                            'url' => '?r=site/login'
                         ]
                     ]
                 ],
@@ -116,6 +209,7 @@ AppAsset::register($this);
                             'label' => 'Further Education',
                             'url' => '#',
                         ],
+
                         [
                             'label' => 'SEN',
                             'url' => '#',
@@ -174,6 +268,7 @@ AppAsset::register($this);
 
         ]),
     ] ;
+    }
     echo "<br><br>";
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
@@ -183,6 +278,7 @@ AppAsset::register($this);
     ?>
 
     <div class="container">
+        <br><br><br>
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
@@ -193,7 +289,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy;Nikoz Recruitment <?= date('Y') ?></p>
 
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>

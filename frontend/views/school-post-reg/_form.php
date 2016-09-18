@@ -1,7 +1,9 @@
 <?php
 
+use frontend\models\Lisofschools;
 use frontend\models\Regions;
 use frontend\models\SchoolAgeArea;
+use kartik\select2\Select2;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
@@ -24,7 +26,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'contact_name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'school_name')->textInput(['maxlength' => true]) ?>
+
+
+
+
+
+
+
+
+
 
     <?= $form->field($model, 'contact_phone')->textInput(['maxlength' => true]) ?>
 
